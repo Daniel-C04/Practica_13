@@ -1,0 +1,223 @@
+$Color-Fondo-Secciones: hsl(300, 43%, 22%);
+$Color-Letras-Nombre: hsl(333, 80%, 67%);
+$Color-Letra-Parrafo: hsl(303, 10%, 53%);
+$Color-Fondo-Votacion: hsl(300, 24%, 96%);
+$Color-Fondo: hsl(0, 0%, 100%);
+/*400 500 700*/
+$Letra-Tipo: "League Spartan", sans-serif;
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    background-color: $Color-Fondo;
+    padding: 5rem 2.3rem;
+    background-image: url(../Imagenes/bg-pattern-top-mobile.svg), url(../Imagenes/bg-pattern-bottom-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: top 0vh left 0vh, bottom 0 right 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: $Letra-Tipo;
+        width: 100%;
+    }
+}
+
+.section-encabezado {
+    text-align: center;
+    line-height: 2.2rem;
+
+    h1 {
+        color: $Color-Fondo-Secciones;
+        font-size: 35px;
+        padding: 2rem 3.1rem;
+        line-height: 2.9rem;
+    }
+
+    p {
+        color: $Color-Letra-Parrafo;
+        font-weight: 500;
+        font-size: 18px;
+    }
+}
+
+.section-intermedio {
+    margin-top: 2.4rem;
+    width: 100%;
+
+    div {
+        background-color: $Color-Fondo-Votacion;
+        border-radius: 1rem;
+        margin-bottom: 1rem;
+        height: 8rem;
+        text-align: center;
+        padding-top: 1.5rem;
+        line-height: 2.5rem;
+
+        figure img {
+            margin: 0 0.2rem;
+        }
+
+        p {
+            color: $Color-Fondo-Secciones;
+            font-weight: 700;
+            font-size: 17px;
+        }
+    }
+}
+
+.section-final {
+    margin-top: 2rem;
+
+    article {
+        background-color: $Color-Fondo-Secciones;
+        border-radius: 0.8rem;
+        margin: 2rem 0;
+        padding: 2.5rem;
+        font-family: $Letra-Tipo;
+
+        div {
+            margin-top: 2rem;
+            display: grid;
+            grid-template-columns: 60px 1fr;
+            grid-template-rows: 1fr 1fr;
+            margin-bottom: 2rem;
+
+            figure {
+                grid-row: 1/span 2;
+
+                img {
+                    width: 45px;
+                    border-radius: 50%;
+                }
+            }
+
+            h2 {
+                color: $Color-Fondo;
+                font-size: 20px;
+                font-weight: 500;
+            }
+
+            p {
+                color: $Color-Letras-Nombre;
+                font-size: 19px;
+            }
+        }
+    }
+
+    p {
+        color: $Color-Fondo;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 2.4rem;
+    }
+
+}
+
+footer {
+    .attribution {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .attribution a {
+        color: hsl(228, 45%, 44%);
+    }
+}
+
+@media (min-width: 1024px) {
+    body {
+        background-image: url(../Imagenes/bg-pattern-top-desktop.svg), url(../Imagenes/bg-pattern-bottom-desktop.svg);
+        background-repeat: no-repeat;
+        main {
+            display: grid;
+            grid-template-columns: 460px 1fr;
+            grid-template-rows: 300px 1fr;
+            padding: 0 6rem;
+            align-items: center;
+        }
+    }
+
+    .section-encabezado {
+        text-align: start;
+
+        h1 {
+            font-size: 5.5rem;
+            line-height: 4.5rem;
+            font-weight: 700;
+            padding: 0;
+        }
+
+        p {
+            margin-top: 3rem;
+            font-size: 18px;
+            line-height: 2.5rem;
+        }
+    }
+
+    .section-intermedio {
+        transform: translateY(10px);
+        margin: 0;
+        display: grid;
+        grid-template-rows: repeat(3, 70px);
+        justify-content: center;
+
+        div {
+            width: 420px;
+            display: flex;
+            height: 55px;
+            padding: 0;
+            align-items: center;
+            margin: 0;
+
+            figure {
+                padding: 0 3rem;
+            }
+        }
+
+        div:nth-child(2) {
+            transform: translateX(12%);
+        }
+
+        div:nth-child(3) {
+            transform: translateX(24%);
+        }
+    }
+
+    .section-final {
+        grid-column: 1/span 2;
+        display: flex;
+
+        article {
+            width: 360px;
+
+        }
+
+        article:nth-child(2) {
+            margin: 2rem 2rem;
+            transform: translateY(25px);
+        }
+
+        article:nth-child(3) {
+            transform: translateY(45PX);
+        }
+    }
+
+    footer {
+        transform: translateY(35px);
+    }
+
+}
